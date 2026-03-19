@@ -3,65 +3,23 @@
 <head>
   <title>Phytochemical Database</title>
 
-  <!-- DataTables + Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 
   <style>
-    body {
-      background: #f5f7fb;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    .header {
-      background: #0d6efd;
-      color: white;
-      padding: 15px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .container-box {
-      background: white;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    table.dataTable thead {
-      background: #212529;
-      color: white;
-    }
-
-    a {
-      text-decoration: none;
-      color: #0d6efd;
-      font-weight: 500;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .filters input {
-      width: 100%;
-      padding: 5px;
-      font-size: 12px;
-    }
+    body { background:#f5f7fb; font-family:Segoe UI; }
+    .header { background:#0d6efd; color:white; padding:15px; font-size:20px; }
+    .container-box { background:white; padding:20px; margin-top:20px; border-radius:10px; }
+    table.dataTable thead { background:#212529; color:white; }
+    .filters input { width:100%; font-size:12px; }
   </style>
 </head>
 
 <body>
 
-<div class="header">
-  IMPPAT - Phytochemical Database
-</div>
+<div class="header">IMPPAT - Phytochemical Database</div>
 
 <div class="container container-box">
-
-  <h4 class="mb-3">Search & Filter</h4>
-
   <table id="dataTable" class="table table-striped">
     <thead>
       <tr>
@@ -72,89 +30,52 @@
         <th>Reference</th>
       </tr>
       <tr class="filters">
-        <th><input type="text" placeholder="Filter Plant"></th>
-        <th><input type="text" placeholder="Filter Part"></th>
-        <th><input type="text" placeholder="Filter ID"></th>
-        <th><input type="text" placeholder="Filter Name"></th>
-        <th><input type="text" placeholder="Filter Ref"></th>
+        <th><input placeholder="Filter"></th>
+        <th><input placeholder="Filter"></th>
+        <th><input placeholder="Filter"></th>
+        <th><input placeholder="Filter"></th>
+        <th><input placeholder="Filter"></th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
-
 </div>
 
-<!-- JS -->
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
 <script>
-const data = [
-  {plant:"Tulsi",part:"leaf",id:"IMPHY0001",name:"Eugenol",reference:"ISBN:111"},
-  {plant:"Neem",part:"leaf",id:"IMPHY0002",name:"Azadirachtin",reference:"ISBN:112"},
-  {plant:"Aloe Vera",part:"gel",id:"IMPHY0003",name:"Aloin",reference:"ISBN:113"},
-  {plant:"Ashwagandha",part:"root",id:"IMPHY0004",name:"Withanolide",reference:"ISBN:114"},
-  {plant:"Turmeric",part:"root",id:"IMPHY0005",name:"Curcumin",reference:"ISBN:115"},
-  {plant:"Ginger",part:"root",id:"IMPHY0006",name:"Gingerol",reference:"ISBN:116"},
-  {plant:"Peppermint",part:"leaf",id:"IMPHY0007",name:"Menthol",reference:"ISBN:117"},
-  {plant:"Basil",part:"leaf",id:"IMPHY0008",name:"Linalool",reference:"ISBN:118"},
-  {plant:"Cinnamon",part:"bark",id:"IMPHY0009",name:"Cinnamaldehyde",reference:"ISBN:119"},
-  {plant:"Clove",part:"bud",id:"IMPHY0010",name:"Eugenol",reference:"ISBN:120"},
-  {plant:"Garlic",part:"bulb",id:"IMPHY0011",name:"Allicin",reference:"ISBN:121"},
-  {plant:"Onion",part:"bulb",id:"IMPHY0012",name:"Quercetin",reference:"ISBN:122"},
-  {plant:"Rosemary",part:"leaf",id:"IMPHY0013",name:"Rosmarinic acid",reference:"ISBN:123"},
-  {plant:"Thyme",part:"leaf",id:"IMPHY0014",name:"Thymol",reference:"ISBN:124"},
-  {plant:"Lavender",part:"flower",id:"IMPHY0015",name:"Linalyl acetate",reference:"ISBN:125"},
-  {plant:"Chamomile",part:"flower",id:"IMPHY0016",name:"Apigenin",reference:"ISBN:126"},
-  {plant:"Eucalyptus",part:"leaf",id:"IMPHY0017",name:"Eucalyptol",reference:"ISBN:127"},
-  {plant:"Fenugreek",part:"seed",id:"IMPHY0018",name:"Diosgenin",reference:"ISBN:128"},
-  {plant:"Black Pepper",part:"fruit",id:"IMPHY0019",name:"Piperine",reference:"ISBN:129"},
-  {plant:"Cardamom",part:"seed",id:"IMPHY0020",name:"Cineole",reference:"ISBN:130"},
-  {plant:"Saffron",part:"stigma",id:"IMPHY0021",name:"Crocin",reference:"ISBN:131"},
-  {plant:"Moringa",part:"leaf",id:"IMPHY0022",name:"Quercetin",reference:"ISBN:132"},
-  {plant:"Licorice",part:"root",id:"IMPHY0023",name:"Glycyrrhizin",reference:"ISBN:133"},
-  {plant:"Ginseng",part:"root",id:"IMPHY0024",name:"Ginsenoside",reference:"ISBN:134"},
-  {plant:"Hibiscus",part:"flower",id:"IMPHY0025",name:"Anthocyanin",reference:"ISBN:135"},
-  {plant:"Papaya",part:"fruit",id:"IMPHY0026",name:"Papain",reference:"ISBN:136"},
-  {plant:"Guava",part:"leaf",id:"IMPHY0027",name:"Tannins",reference:"ISBN:137"},
-  {plant:"Banana",part:"fruit",id:"IMPHY0028",name:"Dopamine",reference:"ISBN:138"},
-  {plant:"Apple",part:"fruit",id:"IMPHY0029",name:"Pectin",reference:"ISBN:139"},
-  {plant:"Mango",part:"fruit",id:"IMPHY0030",name:"Mangiferin",reference:"ISBN:140"}
-];
+fetch('data.json')
+  .then(res => res.json())
+  .then(data => {
 
-$(document).ready(function () {
-
-  const table = $('#dataTable').DataTable({
-    data: data,
-    pageLength: 10,
-    columns: [
-      {
-        data: 'plant',
-        render: function(data) {
-          return `<a href="detail.html?plant=${data}">${data}</a>`;
-        }
-      },
-      { data: 'part' },
-      {
-        data: 'id',
-        render: function(data) {
-          return `<a href="detail.html?id=${data}">${data}</a>`;
-        }
-      },
-      { data: 'name' },
-      { data: 'reference' }
-    ]
-  });
-
-  // Column filters
-  $('#dataTable thead tr.filters th').each(function (i) {
-    $('input', this).on('keyup change', function () {
-      table.column(i).search(this.value).draw();
+    const table = $('#dataTable').DataTable({
+      data: data,
+      pageLength: 10,
+      columns: [
+        {
+          data: 'plant',
+          render: data => `<a href="detail.html?plant=${encodeURIComponent(data)}">${data}</a>`
+        },
+        { data: 'part' },
+        {
+          data: 'id',
+          render: data => `<a href="detail.html?id=${data}">${data}</a>`
+        },
+        { data: 'name' },
+        { data: 'reference' }
+      ]
     });
-  });
 
-});
+    // column filters
+    $('#dataTable thead tr.filters th').each(function (i) {
+      $('input', this).on('keyup change', function () {
+        table.column(i).search(this.value).draw();
+      });
+    });
+
+  });
 </script>
 
 </body>
