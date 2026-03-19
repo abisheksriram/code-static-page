@@ -1,16 +1,32 @@
 [
-  {
-    "plant": "Croton bonplandianus",
-    "part": "leaf",
-    "id": "IMPHY004646",
-    "name": "Vomifoliol",
-    "reference": "ISBN:9770972795006"
-  },
-  {
-    "plant": "Croton bonplandianus",
-    "part": "leaf",
-    "id": "IMPHY009416",
-    "name": "Sparsiflorine",
-    "reference": "ISBN:9788172360481"
-  }
+  {"plant":"Tulsi","part":"leaf","id":"IMPHY0001","name":"Eugenol","reference":"ISBN:111"},
+  {"plant":"Neem","part":"leaf","id":"IMPHY0002","name":"Azadirachtin","reference":"ISBN:112"},
+  {"plant":"Aloe Vera","part":"gel","id":"IMPHY0003","name":"Aloin","reference":"ISBN:113"},
+  {"plant":"Ashwagandha","part":"root","id":"IMPHY0004","name":"Withanolide","reference":"ISBN:114"},
+  {"plant":"Turmeric","part":"root","id":"IMPHY0005","name":"Curcumin","reference":"ISBN:115"},
+  {"plant":"Ginger","part":"root","id":"IMPHY0006","name":"Gingerol","reference":"ISBN:116"},
+  {"plant":"Peppermint","part":"leaf","id":"IMPHY0007","name":"Menthol","reference":"ISBN:117"},
+  {"plant":"Basil","part":"leaf","id":"IMPHY0008","name":"Linalool","reference":"ISBN:118"},
+  {"plant":"Cinnamon","part":"bark","id":"IMPHY0009","name":"Cinnamaldehyde","reference":"ISBN:119"},
+  {"plant":"Clove","part":"bud","id":"IMPHY0010","name":"Eugenol","reference":"ISBN:120"},
+  {"plant":"Garlic","part":"bulb","id":"IMPHY0011","name":"Allicin","reference":"ISBN:121"},
+  {"plant":"Onion","part":"bulb","id":"IMPHY0012","name":"Quercetin","reference":"ISBN:122"},
+  {"plant":"Rosemary","part":"leaf","id":"IMPHY0013","name":"Rosmarinic acid","reference":"ISBN:123"},
+  {"plant":"Thyme","part":"leaf","id":"IMPHY0014","name":"Thymol","reference":"ISBN:124"},
+  {"plant":"Lavender","part":"flower","id":"IMPHY0015","name":"Linalyl acetate","reference":"ISBN:125"},
+  {"plant":"Chamomile","part":"flower","id":"IMPHY0016","name":"Apigenin","reference":"ISBN:126"},
+  {"plant":"Eucalyptus","part":"leaf","id":"IMPHY0017","name":"Eucalyptol","reference":"ISBN:127"},
+  {"plant":"Fenugreek","part":"seed","id":"IMPHY0018","name":"Diosgenin","reference":"ISBN:128"},
+  {"plant":"Black Pepper","part":"fruit","id":"IMPHY0019","name":"Piperine","reference":"ISBN:129"},
+  {"plant":"Cardamom","part":"seed","id":"IMPHY0020","name":"Cineole","reference":"ISBN:130"},
+  {"plant":"Saffron","part":"stigma","id":"IMPHY0021","name":"Crocin","reference":"ISBN:131"},
+  {"plant":"Moringa","part":"leaf","id":"IMPHY0022","name":"Quercetin","reference":"ISBN:132"},
+  {"plant":"Licorice","part":"root","id":"IMPHY0023","name":"Glycyrrhizin","reference":"ISBN:133"},
+  {"plant":"Ginseng","part":"root","id":"IMPHY0024","name":"Ginsenoside","reference":"ISBN:134"},
+  {"plant":"Hibiscus","part":"flower","id":"IMPHY0025","name":"Anthocyanin","reference":"ISBN:135"},
+  {"plant":"Papaya","part":"fruit","id":"IMPHY0026","name":"Papain","reference":"ISBN:136"},
+  {"plant":"Guava","part":"leaf","id":"IMPHY0027","name":"Tannins","reference":"ISBN:137"},
+  {"plant":"Banana","part":"fruit","id":"IMPHY0028","name":"Dopamine","reference":"ISBN:138"},
+  {"plant":"Apple","part":"fruit","id":"IMPHY0029","name":"Pectin","reference":"ISBN:139"},
+  {"plant":"Mango","part":"fruit","id":"IMPHY0030","name":"Mangiferin","reference":"ISBN:140"}
 ]
