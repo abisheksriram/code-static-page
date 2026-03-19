@@ -3,17 +3,8 @@
 <head>
   <title>Details</title>
   <style>
-    body {
-      font-family: Arial;
-      background: #f5f7fb;
-      padding: 20px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+    body { font-family:Arial; background:#f5f7fb; padding:20px; }
+    .card { background:white; padding:20px; border-radius:10px; }
   </style>
 </head>
 
@@ -21,7 +12,7 @@
 
 <div class="card">
   <h3>Details</h3>
-  <div id="details"></div>
+  <div id="details">Loading...</div>
 </div>
 
 <script>
@@ -29,17 +20,21 @@ const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const plant = params.get("plant");
 
-const data = JSON.parse(localStorage.getItem("data")) || [];
+fetch('data.json')
+  .then(res => res.json())
+  .then(data => {
 
-const result = data.find(d => d.id === id || d.plant === plant);
+    const result = data.find(d => d.id === id || d.plant === plant);
 
-document.getElementById("details").innerHTML = result ? `
-  <p><b>Plant:</b> ${result.plant}</p>
-  <p><b>Part:</b> ${result.part}</p>
-  <p><b>ID:</b> ${result.id}</p>
-  <p><b>Name:</b> ${result.name}</p>
-  <p><b>Reference:</b> ${result.reference}</p>
-` : "No data found";
+    document.getElementById("details").innerHTML = result ? `
+      <p><b>Plant:</b> ${result.plant}</p>
+      <p><b>Part:</b> ${result.part}</p>
+      <p><b>ID:</b> ${result.id}</p>
+      <p><b>Name:</b> ${result.name}</p>
+      <p><b>Reference:</b> ${result.reference}</p>
+    ` : "No data found";
+
+  });
 </script>
 
 </body>
